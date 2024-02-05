@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://www.youtube.com/*
 // @grant       none
-// @version     1.0
+// @version     1.1
 // @author      -
 // @description 21/01/2024, 15:53:30
 // @run-at       document-start
@@ -11,7 +11,7 @@
 
 
 
-const visible_path = ['subscriptions', 'library', 'history', 'videos', 'playlist', 'results', 'channel', '/c/', 'user'];
+const visible_path = ['search','subscriptions', 'library', 'history', 'videos', 'playlist', 'results', 'channel', '/c/', 'user'];
 
 function is_visible(path){
 

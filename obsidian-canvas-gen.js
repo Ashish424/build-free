@@ -1,12 +1,18 @@
 // Obsidian accepts base 36 16 digits strings as ids
 // sl - https://forum.obsidian.md/t/how-is-the-canvas-node-element-id-determined/50739
-function generate_unique_string(){
+
+
+// js or with 0 to truncate to an integer trick 
+// sl -  https://stackoverflow.com/questions/48265771/js-bitwise-what-are-the-rules-of-math-random-2-being-interpreted-as-0-and 
+function generate_unique_string(len = 16,base = 36){
     let result = '';
-    while (result.length < 16) {
-        result += Math.random().toString(36).slice(2, 16);
+    for(let i = 0;i<len;++i){
+        // NOTE : string concatenation generates garbage 
+        // TODO: see if you can eliminate this 
+        result += (Math.random()*36 | 0).toString(base);
     }
-    return result.slice(0, 16);
-};
+    return result;
+}
 
 function generate_unique_strings_array(array_length){
     const unique_strings = new Set();
